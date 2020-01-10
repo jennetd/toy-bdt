@@ -11,7 +11,7 @@ git clone https://github.com/jennetd/toy-bdt
 cd toy-bdt
 ```
 
-* All code runs in docker image jdickins/ubu16_root_xgb_etc:d
+All code runs in docker image jdickins/ubu16_root_xgb_etc:d
 ```
 docker pull image jdickins/ubu16_root_xgb_etc:d
 docker run -it image jdickins/ubu16_root_xgb_etc:d /bin/bash
