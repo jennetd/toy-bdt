@@ -23,14 +23,17 @@ def draw_true():
         h_label.Fill(row["x"],row["y"],row["label"]);
         
     c = ROOT.TCanvas("c_true","c_true",800,600)
-    
+    ROOT.gPad.SetRightMargin(0.15)
+    ROOT.gStyle.SetOptStat(0)
+    ROOT.gStyle.SetOptTitle(0)
+            
     h_label.GetXaxis().SetTitle("x");
     h_label.GetYaxis().SetTitle("y");		
     h_label.GetZaxis().SetRangeUser(0,1);
     h_label.GetZaxis().SetTitle("Label");
     h_label.Draw("COLZ");
     
-    save(c,"output/pred_label");
+    save(c,"pred_label");
 
     return
 

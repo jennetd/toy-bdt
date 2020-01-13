@@ -19,6 +19,7 @@ source /root-6.14.08-build/bin/thisroot.sh
 ```
 
 Summary of sub-directories
-* xgb-binary: Run a BDT on toy data using XGBoost
+* xgb-binary: Run a BDT on toy data (2 classes) using XGBoost
+* xgb-multiclass: Run a BDT on toy data (3 classes) using XGBoost
 
 
