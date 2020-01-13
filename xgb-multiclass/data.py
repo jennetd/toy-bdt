@@ -14,10 +14,10 @@ def f(x,y,rndm):
     df["x"]=x.flatten()
     df["y"]=y.flatten()
     df["rndm"]=rndm.flatten()
-    df["label"]=1
+    df["label"]=0
 
-    df["label"][(.5*(np.cos(4*np.pi*df["x"])+.5) > df["y"]+df["rndm"])] = 0
-    df["label"][(.5*(np.cos(4*np.pi*df["x"])+1.5) < df["y"]+df["rndm"])] = 0
+    df["label"][(.5*(np.cos(4*np.pi*df["x"])+.5) > df["y"]+df["rndm"])] = 1
+    df["label"][(.5*(np.cos(4*np.pi*df["x"])+1.5) < df["y"]+df["rndm"])] = 2
 
     return df[["x","y","label"]]
     
