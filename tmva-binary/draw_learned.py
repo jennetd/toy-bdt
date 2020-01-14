@@ -47,14 +47,13 @@ def draw_learned():
     
     all_events = tree2array(
         tree,
-        branches=["x","y","score"]
+        branches=["x","y","pred"]
     )
     
     df = pd.DataFrame(all_events)
-    df[df["score"]==0] += 0.0000001
     
     for index, row in df.iterrows():
-        h.Fill(row["x"],row["y"],(row["score"]+1)*0.5)
+        h.Fill(row["x"],row["y"],(row["pred"]+1)*0.5)
         
     c = ROOT.TCanvas("c","c",800,600)
     ROOT.gPad.SetRightMargin(0.15)
@@ -65,7 +64,7 @@ def draw_learned():
     h.GetZaxis().SetRangeUser(0,1);
     h.GetZaxis().SetTitle("BDT score");
     h.Draw("COLZ");
-    save(c,"pred_score");
+    save(c,"pred_test");
                                 
     return
 

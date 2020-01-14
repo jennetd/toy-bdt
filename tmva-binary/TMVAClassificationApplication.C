@@ -107,8 +107,8 @@ void TMVAClassificationApplication( TString myMethodList = "" )
   double x, y, score;
   output->Branch("x",&x);
   output->Branch("y",&y);
-  output->Branch("score",&score);
-  
+  output->Branch("pred",&score);
+
   std::cout << "--- Select signal sample" << std::endl;
   TTree* theTree = (TTree*)input->Get("sig");
   theTree->SetBranchAddress( "x", &var1 );
@@ -123,7 +123,7 @@ void TMVAClassificationApplication( TString myMethodList = "" )
 
     x = var1;
     y = var2;
-    
+
     if (Use["BDTG"         ]){
       score = reader->EvaluateMVA( "BDTG method" );
       histBdtG   ->Fill( score );
@@ -155,10 +155,11 @@ void TMVAClassificationApplication( TString myMethodList = "" )
       output->Fill();
     }
   }
+
   // Get elapsed time
   sw2.Stop();
   std::cout << "--- End of event loop: "; sw.Print();
-  
+
   // Write histograms
   if (Use["BDTG"         ]){
     histBdtG->Write();
