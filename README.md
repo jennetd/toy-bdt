@@ -1,6 +1,6 @@
 Jennet Dickinson
 Toy BDT Model
-Thesis Appendix (link)
+Thesis Appendix D (http://cds.cern.ch/record/2719502?ln=en)
 Jan 10, 2020
 
 Setup instructions
